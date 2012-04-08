@@ -17,6 +17,7 @@
 	// Load required classes
 		require_once(dirname(__FILE__) . '/includes/classes/bon.class.php');
 		require_once(dirname(__FILE__) . '/includes/classes/bontemp.class.php');
+		require_once(dirname(__FILE__) . '/includes/classes/bonform.class.php');
 		
 	// Load required interfaces
 		require_once(dirname(__FILE__) . '/includes/interfaces/bondrawable.interface.php');

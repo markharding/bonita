@@ -1,7 +1,7 @@
 Bonita: a simple PHP template manager with lofty ambitions.
 ===========================================================
 
-Version 0.2: September 6, 2011.
+Version 0.3: April 8, 2012.
 
 Explanation
 -----------
@@ -38,7 +38,7 @@ Bonita uses Github's built-in issue tracker:
 Copyright and license
 ---------------------
 
-Copyright 2011 Ben Werdmuller <ben@benwerd.com>
+Copyright 2011-2012 Ben Werdmuller <ben@benwerd.com>
 <http://benwerd.com/>
 
 Licensed under the Apache License, Version 2.0 (the "License");

@@ -16,6 +16,7 @@
 			 	static $path = '';						// The path of the Bonita base
 			 	static $additionalPaths = array();		// Additional paths to check for templates
 			 	static $cache = false;					// Set depending on the existence of the cache
+			 	static $secret = '';					// Site secret
 		 	
 		 	/** Private helper vars **/
 		 	
@@ -61,10 +62,28 @@
 			 	 * Gets all saved paths, including the main Bonita path
 			 	 * @return array
 			 	 */
+
 			 		static function getPaths() {
 			 			$paths = self::getAdditionalPaths();
 						$paths[] = self::$path;
 						return $paths;
+			 		}
+			 		
+			 	/**
+			 	 * Sets the site secret
+			 	 */
+
+			 		public static function siteSecret($secret) {
+			 			self::$secret = $secret;
+			 		}
+			 		
+			 	/**
+			 	 * Retrieves the site secret
+			 	 * @return string The site secret
+			 	 */
+
+			 		public static function getSiteSecret() {
+			 			return self::$secret;
 			 		}
 			 		
 			 	/**
