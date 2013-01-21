@@ -22,7 +22,7 @@
 		$t->body = $t->draw('pages/forms');
 		
 	// Was the form already submitted?
-		if (isset($_REQUEST['__bTa'])) {
+		if (BonForm::formSubmitted()) {
 			
 			// If so, validate the form token (to prevent nefarious tomfoolery)
 			if (BonForm::validateToken()) {

@@ -55,6 +55,21 @@
 		 			return false;
 		 		
 		 		}
+				
+			/**
+			 *  Determines whether Bonita form submission data exists and is ready to be processed.
+			 * 
+			 *  @return true|false
+			 */
+				
+				public static function formSubmitted() {
+				    
+				    if (isset($_REQUEST['__bTk']) && isset($_REQUEST['__bTs'])) {
+					return true;
+				    }
+				    return false;
+				    
+				}
 		 		
 		 	/**
 		 	 * 	Generate a token based on a given action and UNIX timestamp.
