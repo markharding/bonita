@@ -1,7 +1,7 @@
 Bonita: a simple PHP template manager with lofty ambitions.
 ===========================================================
 
-Version 0.3: April 8, 2012.
+Version 0.4: January 20, 2013.
 
 Explanation
 -----------
