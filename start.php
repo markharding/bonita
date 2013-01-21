@@ -16,7 +16,7 @@
 	// Bonita uses autoloading
 		
 		spl_autoload_register(function($class) {
-		    require_once(dirname(__FILE__) . '/includes/classes/'.$class.'.class.php');
+		    @include(dirname(__FILE__) . '/includes/classes/'.$class.'.class.php');
 		});
 		
 	// Set Bonita base path to the directory this file is in
