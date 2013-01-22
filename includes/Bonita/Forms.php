@@ -12,7 +12,8 @@
 	
 	 */
 	 
-	 	class BonForm extends BonTemp {
+	 namespace Bonita {
+	 	class Forms extends Templates {
 	 	
 			/**
 			 *  Attaches a target URL to the form.
@@ -25,7 +26,7 @@
 		 		
 		 		public function draw($templateName, $returnBlank = true) {
 		 		
-		 			$this->token = sha1($this->targetURL . $time . Bon::getSiteSecret());
+		 			$this->token = sha1($this->targetURL . $time . \Bonita\Main::getSiteSecret());
 		 			$this->time = time();
 		 			$parent::draw($templateName, $returnBlank);
 		 		
@@ -80,7 +81,8 @@
 		 	 *	@return true|false
 		 	 */
 		 		public static function token($action, $time) {
-		 			return sha1($action . $time . Bon::getSiteSecret());
+		 			return sha1($action . $time . \Bonita\Main::getSiteSecret());
 		 		}
 	 	
 	 	}
+	 }

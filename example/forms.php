@@ -13,19 +13,19 @@
 		require_once dirname(dirname(__FILE__)) . '/start.php';
 	
 	// Add this directory as an additional path
-		Bon::additionalPath(dirname(__FILE__));
+		\Bonita\Main::additionalPath(dirname(__FILE__));
 		
 	// Instantiate template
-		$t = new BonTemp();
+		$t = new \Bonita\Templates();
 		
 	// Set the body
 		$t->body = $t->draw('pages/forms');
 		
 	// Was the form already submitted?
-		if (BonForm::formSubmitted()) {
+		if (\Bonita\Forms::formSubmitted()) {
 			
 			// If so, validate the form token (to prevent nefarious tomfoolery)
-			if (BonForm::validateToken()) {
+			if (\Bonita\Forms::validateToken()) {
 			
 				// If the action completed, set the body to our form submission template
 				$t->body = $t->draw('pages/example/formsubmitted');

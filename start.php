@@ -16,14 +16,15 @@
 	// Bonita uses autoloading
 		
 		spl_autoload_register(function($class) {
-		    @include(dirname(__FILE__) . '/includes/classes/'.$class.'.class.php');
+		    $class = str_replace('\\','/',$class);
+		    @include(dirname(__FILE__) . '/includes/'.$class.'.php');
 		});
 		
 	// Set Bonita base path to the directory this file is in
-		Bon::$path = dirname(__FILE__);
+		\Bonita\Main::$path = dirname(__FILE__);
 		
 	// Establish mobile 
 		
 	// Check for the existence of a cache file: if it exists, run it
 	// (NB: right now, the cache mechanism is a definite @TODO)
-		if (file_exists(Bon::$path . '/paths.cache.php')) @include_once Bon::$path . '/paths.cache.php';
+		if (file_exists(\Bonita\Main::$path . '/paths.cache.php')) @include_once \Bonita\Main::$path . '/paths.cache.php';

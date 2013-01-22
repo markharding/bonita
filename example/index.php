@@ -14,15 +14,17 @@
 		require_once dirname(dirname(__FILE__)) . '/start.php';
 	
 	// Add this directory as an additional path
-		Bon::additionalPath(dirname(__FILE__));
+		\Bonita\Main::additionalPath(dirname(__FILE__));
 		
 	// Instantiate template
-		$t = new BonTemp();
+		$t = new \Bonita\Templates();
 		
 	// For the purposes of this example, some GET line fun to choose which template
 	// we're using
 		$t->detectTemplateType();
-		$t->setTemplateType($_GET['t']);
+		if (!empty($_GET['t'])) {
+		    $t->setTemplateType($_GET['t']);
+		}
 		
 	// Page contents:
 	

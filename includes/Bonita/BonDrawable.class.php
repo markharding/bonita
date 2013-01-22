@@ -16,11 +16,12 @@
 	 * BonDrawable interface for objects to be automatically drawable.
 	 */
 	
-		interface BonDrawable {
+	 namespace Bonita {
+		interface Drawable {
 		
 			public function getTitle();
 			public function getDescription();
 			public function getURI();
 		
 		}
-		
+	 }
