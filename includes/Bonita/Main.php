@@ -44,7 +44,7 @@
 						if (self::cached()) return false;
 						if (!empty($path) && is_dir($path)) {
 							if (!in_array($path,self::$additionalPaths)) {
-								self::$additionalPaths[] = $path;
+								array_unshift(self::$additionalPaths,$path);
 							}
 						}
 					}
