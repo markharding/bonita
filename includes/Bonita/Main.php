@@ -94,6 +94,7 @@
 				 */
 
 					static function detectDevice() {
+						if (empty($_SERVER['HTTP_USER_AGENT'])) return 'default';
 						$ua = $_SERVER['HTTP_USER_AGENT'];
 
 						// Android
