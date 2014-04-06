@@ -15,6 +15,7 @@
 		class Templates {
 		
 			public $templateType = 'default';		// Which template are we using?
+			public $fallbackToDefault = true;		// Fallback to
 			public $vars = array();					// Template variables
 			
 			/**
@@ -81,7 +82,10 @@
 						
 						// Add template types to an array; ensure we revert to default
 						$templateTypes = array($this->getTemplateType());
-						if ($this->getTemplateType() != 'default') $templateTypes[] = 'default';
+						if ($this->fallbackToDefault)
+						{
+						    if ($this->getTemplateType() != 'default') $templateTypes[] = 'default';
+						}
 						
 						// Cycle through the additional paths and check for the template file
 						// - if it exists, break out of the foreach
