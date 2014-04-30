@@ -162,8 +162,11 @@
 			 * @param $echo If set to true (by default), echoes the page; otherwise returns it
 			 */
 				function drawPage($echo = true) {
-					if ($echo)
+					if ($echo) {
 						echo $this->draw('shell');
+						
+						exit;
+					}
 					else
 						return $this->draw('shell');
 				}
