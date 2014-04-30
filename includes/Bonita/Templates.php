@@ -163,8 +163,16 @@
 			 */
 				function drawPage($echo = true) {
 					if ($echo) {
-						echo $this->draw('shell');
-						
+					    
+						// End session BEFORE we output any data
+						session_write_close();
+
+						// Break long output to avoid a apache performance bug							
+						$split_output = str_split($this->draw('shell'), 1024);
+
+						foreach ($split_output as $chunk)
+						    echo $chunk;
+
 						exit;
 					}
 					else
