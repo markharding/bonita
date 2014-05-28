@@ -166,8 +166,19 @@
 			 * @param $echo If set to true (by default), echoes the page; otherwise returns it
 			 */
 				function drawPage($echo = true) {
-					if ($echo)
-						echo $this->draw('shell');
+					if ($echo) {
+					    
+						// End session BEFORE we output any data
+						session_write_close();
+
+						// Break long output to avoid a apache performance bug							
+						$split_output = str_split($this->draw('shell'), 1024);
+
+						foreach ($split_output as $chunk)
+						    echo $chunk;
+
+						exit;
+					}
 					else
 						return $this->draw('shell');
 				}
